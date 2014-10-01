@@ -12,21 +12,11 @@
 ## TADA!
 
     $ vagrant ssh
-    (vagrant) $ cqlsh
-    (vagrant) cqlsh> CREATE KEYSPACE demodb WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 };
-    (vagrant) cqlsh> USE demodb;
-    (vagrant) cqlsh:demodb> CREATE TABLE list (item varchar, PRIMARY KEY (item));
-    (vagrant) cqlsh:demodb> INSERT INTO list (item) values ('item1');
-    (vagrant) cqlsh:demodb> INSERT INTO list (item) values ('item2');
-    (vagrant) cqlsh:demodb> INSERT INTO list (item) values ('item3');
-    (vagrant) cqlsh:demodb> SELECT * FROM list;
+    (vagrant) $ sudo /usr/share/elasticsearch/bin/plugin -i mobz/elasticsearch-head
+    -> Installing mobz/elasticsearch-head...
+    Trying https://github.com/mobz/elasticsearch-head/archive/master.zip...
+    Downloading .........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................DONE
+    Installed mobz/elasticsearch-head into /usr/share/elasticsearch/plugins/head
+    Identified as a _site plugin, moving to _site structure ...
 
-     item
-    -------
-     item1
-     item3
-     item2
-
-    (3 rows)
-
-
+Visit http://localhost:9200/_plugin/head/
