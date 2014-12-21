@@ -1,11 +1,5 @@
 classes:
- - apt
  - java
-apt::sources:
-  'elasticsearch':
-    release: 'stable'
-    repos: 'main'
-    location: 'http://packages.elasticsearch.org/elasticsearch/1.3/debian'
-    key: 'D88E42B4'
-    key_source: 'http://packages.elasticsearch.org/GPG-KEY-elasticsearch'
-    include_src: false
+ - elasticsearch
+elasticsearch::manage_repo: true
+elasticsearch::repo_version: '1.3'
